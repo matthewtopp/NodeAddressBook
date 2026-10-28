@@ -1,0 +1,17 @@
+{
+  "name": "Matt's address book",
+  "version": "0.0.1",
+  "description": "Personal Address Book PWA in Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Matthew Topp",
+  "license": "GNU GPL v3",
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "sqlite3": "^5.1.6",
+    "ejs": "^3.1.9"
+  }
+}

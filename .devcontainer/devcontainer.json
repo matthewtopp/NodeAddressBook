@@ -1,0 +1,12 @@
+{
+  "name": "Matt's Address book",
+  "image": "mcr.microsoft.com/devcontainers/node:20",
+  "postCreateCommand": "./post-create.sh",
+  "forwardPorts": [5000],
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
