@@ -32,9 +32,12 @@ app.get('/', (req, res) => {
 
 // Add Contact
 app.post('/add', (req, res) => {
-  const { name, phone, email } = req.body;
-  db.run('INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)',
-    [name, phone, email], () => res.redirect('/'));
+  const { name, phone, email, address, dob } = req.body;
+  db.run(
+  'INSERT INTO contacts (name, phone, email, address, dob) VALUES (?, ?, ?, ?, ?)',
+  [name, phone, email, address, dob],
+  () => res.redirect('/')
+        )
 });
 
 // Edit Contact - Show form
@@ -46,10 +49,13 @@ app.get('/edit/:id', (req, res) => {
 
 // Edit Contact - Update
 app.post('/edit/:id', (req, res) => {
-  const { name, phone, email } = req.body;
-  db.run('UPDATE contacts SET name=?, phone=?, email=? WHERE id=?',
-    [name, phone, email, req.params.id], () => res.redirect('/'));
-});
+  const { name, phone, email, address, dob } = req.body;
+  db.run(
+  'UPDATE contacts SET name=?, phone=?, email=?, address=?, dob=? WHERE id=?',
+  [name, phone, email, address, dob, req.params.id],
+  () => res.redirect('/')
+        )
+      });
 
 // Delete Contact
 app.post('/delete/:id', (req, res) => {
